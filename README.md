@@ -10,7 +10,7 @@ In IAM > Users, create a user. Create access keys. Add permission by creating a 
 
 ## Amplify CLI setup
 
-Install the Amplify CLI
+Install the Amplify CLI.
 
 ```
 npm install -g @aws-amplify/cli

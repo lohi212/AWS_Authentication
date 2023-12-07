@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import { Amplify } from "aws-amplify";
 import amplifyconfig from "./amplifyconfiguration.json";
+import "./App.css";
 
 function App() {
   const { route, authStatus } = useAuthenticator((context) => [context.route]);
@@ -18,7 +19,6 @@ function App() {
 
   return (
     <div className="App">
-      {authStatus === "configuring" && "Loading..."}
       <Router>
         <div>
           <NavLink exact to="/">
@@ -38,10 +38,11 @@ function App() {
           />
           <Route
             path="/about"
-            element={route === "authenticated" ? <Home /> : <Authenticator />}
+            element={route === "authenticated" ? <About /> : <Authenticator />}
           />
         </Routes>
       </Router>
+      {authStatus === "configuring" && "Loading..."}
     </div>
   );
 }
